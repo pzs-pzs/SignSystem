@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css" th:href="@{/css/swiper.min.css}"/>
+
+    <script type="text/javascript" src="js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" src="js/swiper.min.js" th:src="@{/js/swiper.min.js}"></script>
+    <script type="text/javascript" src="js/user.js" th:src="@{/js/user.js}"></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #404040;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 70%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+    </style>
+
+
+
+    <title>签到系统</title>
+</head>
+<body>
+   <nav class="navbar navbar-default" role="navigation">
+
+     <div class="navbar-header">
+        <a class="navbar-brand" href="index.html" th:href="@{/toIndex}">签到系统</a>
+     </div>
+
+     <div>
+        <p class="navbar-text navbar-left" id="welcome" ></p>
+     </div>
+
+     <div>
+
+        <ul class="nav navbar-nav pull-right">
+
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-home"> 主页</span></a></li>
+
+            <!--<li><a href="inform.html"><span class="glyphicon glyphicon-bullhorn"> 通知通告</span></a></li>-->
+
+            <!--<li><a href="lost.html"><span class="glyphicon glyphicon-search"> 失物招领</span></a></li>-->
+
+            <!--<li><a href="trade.html"><span class="glyphicon glyphicon-shopping-cart"> 二手交易</span></a></li>-->
+
+            <li><a href="login.html" th:href="@{/toUser}"><span class="glyphicon glyphicon-briefcase">用户信息</span></a></li>
+
+            <li><a href="login.html"><span class="glyphicon glyphicon-log-in"> 登录</span></a></li>
+
+        </ul>
+    </div>
+ </nav>
+
+ <div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+    </div>
+    <!-- Add zkm -->
+    <div class="swiper-pagination"></div>
+</div>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
+</script>
+
+
+
+</body>
+
+</html>

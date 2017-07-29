@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>签到系统</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" href="css/drag.css" th:href="@{/css/drag.css}"/>
+
+    <script type="text/javascript" src="js/jquery.js" th:src="@{/js/jquery.js}"></script>
+    <script type="text/javascript" src="js/jquery.md.js" th:src="@{/js/jquery.md.js}"></script>
+    <script type="text/javascript" src="js/user.js" th:src="@{/js/user.js}"></script>
+    <script type="text/javascript" src="js/drag.js" th:src="@{/js/drag.js}"></script>
+    <script src="js/googlegg.js" th:src="@{/js/googlegg.js}"></script>
+
+    <script type="text/javascript" src="js/background.js" th:src="@{/js/background.js}"></script>
+
+    <style>
+        body, html {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -100;
+        }
+    </style>
+
+    <style type="text/css">
+        [class^="ads_"], .infolist + .picview, .adsbygoogle, .ads {
+            display: none !important;
+            display: none
+        }</style>
+
+</head>
+
+<body>
+
+<canvas id="background"></canvas>
+
+<nav class="navbar navbar-inverse" role="navigation">
+
+    <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">签到系统</a>
+    </div>
+
+    <div>
+        <ul class="nav navbar-nav pull-right">
+
+            <li><a href="index.html" th:href="@{/toIndex}"><span class="glyphicon glyphicon-home"> 主页</span></a></li>
+
+            <!--<li><a href="inform.html"><span class="glyphicon glyphicon-bullhorn"> 通知通告</span></a></li>-->
+
+            <!--<li><a href="lost.html"><span class="glyphicon glyphicon-search"> 失物招领</span></a></li>-->
+
+            <!--<li><a href="trade.html"><span class="glyphicon glyphicon-shopping-cart"> 二手交易</span></a></li>-->
+
+            <li><a href="login.html" th:href="@{/login.html}"><span class="glyphicon glyphicon-briefcase">用户信息</span></a></li>
+
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-log-in"> 登录</span></a></li>
+
+        </ul>
+    </div>
+</nav>
+
+<div>
+
+    <div class="container">
+        <div class="col-lg-7"></div>
+        <div class="col-lg-5">
+            <br/><br/><br/><br/><br/><br/><br/>
+            <div class="jumbotron">
+                <form name="loginform" method="POST" id="loginform" action="/loginHandler" th:attr="action=@{/loginHandler}">
+                    <div class="input-group">
+                        <span class="input-group-addon">工号</span>
+                        <input type="text" class="form-control input-lg" id="num" name="num" placeholder="请输入工号"/>
+                    </div>
+                    <br/>
+
+                    <div class="input-group">
+                        <span class="input-group-addon">密码</span>
+                        <input type="password" class="form-control input-lg" id="password" name="password" placeholder="请输入密码"/>
+                    </div>
+                    <br/>
+
+                    <div>
+                        <input type="submit" class="btn btn-lg btn-primary btn-block" value="登陆"/>
+                    </div>
+                    <br/>
+
+
+
+                    <div>
+                        <center>
+                            <a href="register.html">没有帐号，立即注册</a>
+                        </center>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
