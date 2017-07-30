@@ -29,6 +29,11 @@ public class DemoController {
     private final String SUCCESS = "{\"success\":\"1\"}";
     private final String FAILURE = "{\"success\":\"0\"}";
 
+    @GetMapping("/index")
+    public String index() {
+        return "index";
+    }
+
 
     @RequestMapping("/registerHandler")
     public String register(@ModelAttribute User user, Model model,HttpServletResponse response) {
@@ -72,19 +77,19 @@ public class DemoController {
     @ResponseBody
     public String singCountHandler(HttpServletRequest request,HttpServletResponse response) {
         Cookie[] cookies = request.getCookies();//这样便可以获取一个cookie数组
-        boolean flag = false;
+        boolean neesToIndex = false;
         if (null==cookies) {
             System.out.println("=====没有cookie=========");
         } else {
             for(Cookie cookie : cookies){
                 if(cookie.getName().equalsIgnoreCase("user")){
                      String user_inf = cookie.getValue();
-                     flag = signCount(user_inf);
+                     neesToIndex = signCount(user_inf);
                      break;
                 }
             }
         }
-        if(flag) {
+        if(neesToIndex) {
             return SUCCESS;
         }
         return FAILURE;
@@ -217,12 +222,14 @@ public class DemoController {
     public String toUser(HttpServletRequest request,HttpServletResponse response,Model model) {
         Cookie[] cookies = request.getCookies();//这样便可以获取一个cookie数组
         String[] user_inf = null ;
+        boolean needToIndex = true;
         if (null==cookies) {
             System.out.println("没有cookie=========");
         } else {
             for(Cookie cookie : cookies){
                 if(cookie.getName().equalsIgnoreCase("user")) {
                     user_inf = cookie.getValue().split("-");
+                    needToIndex = false;
                     break;
                 }
             }
@@ -232,6 +239,10 @@ public class DemoController {
             model.addAttribute("num", user_inf[1]);
             model.addAttribute("tel", user_inf[2]);
             model.addAttribute("email", user_inf[3]);
+        }
+        if(needToIndex) {
+            return "index";
+
         }
         return "user";
     }
