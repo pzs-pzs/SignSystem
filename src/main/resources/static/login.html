@@ -65,7 +65,7 @@
 
             <!--<li><a href="trade.html"><span class="glyphicon glyphicon-shopping-cart"> 二手交易</span></a></li>-->
 
-            <li><a href="login.html" th:href="@{/index.html}"><span class="glyphicon glyphicon-briefcase">用户信息</span></a></li>
+            <li><a href="login.html" th:href="@{/login.html}"><span class="glyphicon glyphicon-briefcase">用户信息</span></a></li>
 
             <li class="active"><a href="#"><span class="glyphicon glyphicon-log-in"> 登录</span></a></li>
 
@@ -80,7 +80,7 @@
         <div class="col-lg-5">
             <br/><br/><br/><br/><br/><br/><br/>
             <div class="jumbotron">
-                <form name="loginform" method="POST" id="loginform" action="/loginHandler" th:attr="action=@{/loginHandler}">
+                <form name="loginform" method="POST" id="loginform" action="loginHandler" th:attr="action=@{/loginHandler}">
                     <div class="input-group">
                         <span class="input-group-addon">工号</span>
                         <input type="text" class="form-control input-lg" id="num" name="num" placeholder="请输入工号"/>
@@ -101,9 +101,10 @@
 
 
                     <div>
-                        <center>
-                            <a href="register.html">没有帐号，立即注册</a>
-                        </center>
+
+                            <a href="register.html">没有帐号，立即注册</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="findpwd.html">忘记密码</a>
                     </div>
                 </form>
             </div>

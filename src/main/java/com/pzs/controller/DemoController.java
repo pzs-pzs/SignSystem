@@ -29,7 +29,7 @@ public class DemoController {
     private final String SUCCESS = "{\"success\":\"1\"}";
     private final String FAILURE = "{\"success\":\"0\"}";
 
-    @GetMapping("/index")
+    @GetMapping("/")
     public String index() {
         return "index";
     }
