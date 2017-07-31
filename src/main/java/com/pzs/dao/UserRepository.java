@@ -27,7 +27,6 @@ public interface UserRepository extends CrudRepository<User,Long> {
 
     @Modifying
     @Query("update User u set u.name = ?1 where u.num = ?2")
-    @Transactional
     int setFixedNameFor(String name,String num);
 
     @Modifying

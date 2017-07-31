@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -16,6 +17,7 @@ import java.util.List;
  */
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
+@Transactional
 public class UserRepositoryTest {
     @Autowired
     UserRepository userRepository;
@@ -49,5 +51,9 @@ public class UserRepositoryTest {
         userRepository.setFixPasswoedFor("qwe",62L);
         List<User> list1 = userRepository.findByNum("35");
         System.out.println(list1.get(0).getPassword());
+    }
+    @Test
+    public void setFixedNameFor() {
+        int i = userRepository.setFixedNameFor("pzs","35");
     }
 }

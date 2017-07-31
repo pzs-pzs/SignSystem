@@ -5,11 +5,11 @@ import com.pzs.entity.User;
 import com.pzs.service.MailService;
 import com.pzs.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import sun.misc.BASE64Encoder;
 
 import javax.mail.MessagingException;
-import javax.transaction.Transactional;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -20,7 +20,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-@Component("userService")
+@Service
 @Transactional
 public class UserServiceImpl implements UserService ,Runnable{
     private String num;

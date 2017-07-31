@@ -4,15 +4,15 @@ import com.pzs.dao.SignRepository;
 import com.pzs.entity.Sign;
 import com.pzs.service.SignService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component("signService")
+@Service
 @Transactional
 public class SignServiceImpl implements SignService {
 

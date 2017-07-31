@@ -246,11 +246,7 @@ public class DemoController {
         }
         return "user";
     }
-    @RequestMapping("/demo")
-    public String demo(Model model) {
-        model.addAttribute("name","pzs");
-        return "demo";
-    }
+
     @Autowired
     MailService mailService;
 
@@ -262,17 +258,17 @@ public class DemoController {
         userService.setBasePath(basePath);
         Thread thread = new Thread(userService);
         thread.start();
-        return "index";
+        return "sendMailSuccess";
     }
 
     @RequestMapping("/check")
     public String check(@RequestParam("sid") String sid,@RequestParam("id") String id,Model model) {
         if(StringUtils.isEmpty(sid)||StringUtils.isEmpty(id)) {
-            return "demo";
+            return "findpwd";
         }
         Long lid = Long.parseLong(id);
         if(userService.check(sid,lid)==0){
-            return "demo";
+            return "findpwd";
         }
         model.addAttribute("id",id);
         return "changepwd";
@@ -282,5 +278,7 @@ public class DemoController {
         userService.changePassword(user);
         return "login";
     }
+
+
 
 }

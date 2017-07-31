@@ -7,6 +7,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ResourceUtils;
 
 import javax.mail.MessagingException;
@@ -19,6 +20,7 @@ import java.io.FileNotFoundException;
  * Created by puzhengsong on 2017/7/27.
  */
 @Service
+@Transactional
 @PropertySource("classpath:test.properties")
 public class MailServiceImpl implements MailService{
 
