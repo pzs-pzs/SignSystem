@@ -14,6 +14,7 @@ public class DemoApplication {
 	}
 
 	pubic void f() {
+		int i = 0;
 		
 	}
 }
