@@ -14,7 +14,10 @@ public class DemoApplication {
 	}
 
 	pubic void f() {
+<<<<<<< HEAD
 		int i = 0;
+=======
+
 		
 	}
 }
